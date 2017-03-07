@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "portfolio.js": {
+      "files": [
+        "scripts/portfolio/jquery.fancybox.pack.js",
+        "scripts/portfolio/isotope.min.js",
+        "scripts/portfolio/main.js"
+      ]
+    },
+    "portfolio.css": {
+      "files": [
+        "styles/components/portfolio/jquery.fancybox.css",
+        "styles/components/portfolio/styles.css"
+      ]
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://localhost/wordpress/"
+  }
+}

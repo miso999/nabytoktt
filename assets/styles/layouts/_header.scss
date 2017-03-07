@@ -1,0 +1,38 @@
+.bg-header {
+  background: url(../images/meter.png) bottom no-repeat  #ffffff;
+  @include media-breakpoint-down(md) { background: url(../images/meter.png) top no-repeat  #ffffff;}
+}
+
+// Zmensenie navbaru po scrollovani
+body.navbar-short {
+  .bg-header::after {
+    content: "";
+    background: url(../images/meter.png) bottom no-repeat  #ffffff;
+    opacity: 0.99;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .bg-header {
+    background: none;
+
+  }
+
+  .navbar .navbar-brand img {
+    height: 40px;
+  }
+}
+  .navbar-brand img  {
+    @include transition(all 200ms ease-out);
+    @include media-breakpoint-down(md) {height:35px;};
+  }
+
+
+  .navbar {
+    -webkit-box-shadow:0 1px 70px rgba(0,0,0,0.8);
+    box-shadow: 0 1px 70px rgba(0,0,0,0.8)
+  }
