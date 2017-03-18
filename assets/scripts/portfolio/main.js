@@ -30,8 +30,10 @@ jQuery(document).ready(function($) {
 		var isotopeContainer = $('.isotopeContainer');
 		if( !isotopeContainer.length || !jQuery().isotope ) return;
 		$win.load(function(){
+            var filterValue = $('.isotopeFilters').find('.active').find('a').attr('data-filter');
 			isotopeContainer.isotope({
-				itemSelector: '.isotopeSelector'
+				itemSelector: '.isotopeSelector',
+                filter: filterValue
 			});
 		$('.isotopeFilters').on( 'click', 'a', function(e) {
 				$('.isotopeFilters').find('.active').removeClass('active');
@@ -82,7 +84,7 @@ jQuery(document).ready(function($) {
 |
 */
 	
-	myTheme.Isotope({filter: '.schody'});
+	myTheme.Isotope();
 	myTheme.Fancybox();
 
 

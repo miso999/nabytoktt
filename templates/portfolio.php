@@ -6,7 +6,7 @@ $query_images_args = array(
     'post_mime_type' =>'image',
     'post_status' => 'inherit',
     'posts_per_page' => -1,
-    'nabytok' => 'postele,kuchyne,satniky,schody'
+    'nabytok' => 'postele,kuchyne,satniky,schody,exterier'
 
     );
 
@@ -17,7 +17,7 @@ foreach ( $query_images->posts as $index=>$image) {
     $terms =  wp_get_post_terms($image->ID, 'nabytok', array("fields" => "slugs"));
     $images[$index]['category'] =  $terms[0];
     $images[$index]['large'] = wp_get_attachment_image_src( $image->ID, 'large')[0];
-    $images[$index]['thumb'] = wp_get_attachment_image_src( $image->ID, 'thumbnail  ')[0];
+    $images[$index]['thumb'] = wp_get_attachment_image_src( $image->ID, 'thumbnail')[0];
 }
 
 ?>
@@ -43,9 +43,9 @@ foreach ( $query_images->posts as $index=>$image) {
 
                 <div class="filter-container isotopeFilters">
                     <ul class="list-inline filter">
-
-                        <li class="list-inline-item active"><a href="#" data-filter=".kuchyne">Kuchyne</a><span>|</span></li>
-                        <li class="list-inline-item"><a href="#" data-filter=".schody">Schody</a><span>|</span></li>
+                        <li class="list-inline-item"><a href="#" data-filter=".satniky">Šatníky</a><span>|</span></li>
+                        <li class="list-inline-item"><a href="#" data-filter=".kuchyne">Kuchyne</a><span>|</span></li>
+                        <li class="list-inline-item active"><a href="#" data-filter=".schody">Schody</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter=".postele">Postele</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter=".exterier">Exteriér</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter="*">Všetko </a></li>
@@ -63,11 +63,11 @@ foreach ( $query_images->posts as $index=>$image) {
         <div class="isotopeContainer">
 
             <?php foreach ($images as $image) { ?>
-            <div class="col-sm-4 isotopeSelector <?=$image[category]?> ">
+            <div class="col-sm-4 isotopeSelector <?=$image['category']?> ">
                 <article class="">
                     <figure>
-                        <a title="First Image" class="fancybox-pop" rel="portfolio-1" href="<?=$image[large]?>">
-                            <img src="<?=$image[thumb]?>" alt="">
+                        <a title="First Image" class="fancybox-pop" rel="portfolio-1" href="<?=$image['large']?>">
+                            <img height='250' src="<?=$image['thumb']?>" alt="">
                         </a>
                     </figure>
                 </article>

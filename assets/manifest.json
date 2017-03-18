@@ -35,6 +35,6 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost/nabytok/"
+    "devUrl": "http://nabytoktrnava.dev"
   }
 }

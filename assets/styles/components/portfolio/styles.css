@@ -7,7 +7,7 @@
 /* category filter */
 
 .filter-section {
-	padding-top:40px;
+    padding-top:40px;
 }
 
 
@@ -166,7 +166,7 @@ ul.filter > li span {
     margin:0 10px;
     text-decoration:none;
     font-size:20px;
-	background:rgba(0,0,0,0.9);
+    background:rgba(0,0,0,0.9);
     color:#fff;
     border-radius:0
 }
@@ -204,23 +204,3 @@ ul.filter > li span {
 }
 
 
-
-
-
-
-
-
-/*
-|--------------------------------------------------------------------------
-|  Demo Specific Code
-|--------------------------------------------------------------------------
-|
-|
-|
-*/
-
-
-
-.demo-colored-wrap {
-	background:#ecf0f1;
-}
