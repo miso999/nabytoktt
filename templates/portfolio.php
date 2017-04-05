@@ -1,13 +1,36 @@
 <?php
 use Roots\Sage\Extras;
 
+
+function orderby_tax_clauses( $clauses, $wp_query ) {
+global $wpdb;
+$taxonomies = get_taxonomies();
+foreach ($taxonomies as $taxonomy) {
+    if ( isset( $wp_query->query['orderby'] ) && $taxonomy == $wp_query->query['orderby']     ) {
+            $clauses['join'] .=<<<SQL
+
+LEFT OUTER JOIN {$wpdb->term_taxonomy} USING (term_taxonomy_id)
+LEFT OUTER JOIN {$wpdb->terms} USING (term_id)
+SQL;
+            $clauses['where'] .= " AND (taxonomy = '{$taxonomy}' OR taxonomy IS NULL)";
+            $clauses['groupby'] = "object_id";
+            $clauses['orderby'] = "GROUP_CONCAT({$wpdb->terms}.name ORDER BY name ASC) ";
+            $clauses['orderby'] .= ( 'ASC' == strtoupper( $wp_query->get('order') ) ) ?     'ASC' : 'DESC';
+        }
+    }
+    return $clauses;
+}
+
+add_filter('posts_clauses', 'orderby_tax_clauses', 10, 2 );
+
+
 $query_images_args = array(
     'post_type' => 'attachment',
     'post_mime_type' =>'image',
     'post_status' => 'inherit',
     'posts_per_page' => -1,
-    'nabytok' => 'postele,kuchyne,satniky,schody,exterier'
-
+    'nabytok' => 'postele,kuchyne,satniky,schody,exterier',
+    'orderby' => 'nabytok'
     );
 
 $query_images = new WP_Query( $query_images_args );
@@ -43,9 +66,9 @@ foreach ( $query_images->posts as $index=>$image) {
 
                 <div class="filter-container isotopeFilters">
                     <ul class="list-inline filter">
-                        <li class="list-inline-item"><a href="#" data-filter=".satniky">Šatníky</a><span>|</span></li>
+                        <li class="list-inline-item active"><a href="#" data-filter=".satniky">Šatníky</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter=".kuchyne">Kuchyne</a><span>|</span></li>
-                        <li class="list-inline-item active"><a href="#" data-filter=".schody">Schody</a><span>|</span></li>
+                        <li class="list-inline-item"><a href="#" data-filter=".schody">Schody</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter=".postele">Postele</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter=".exterier">Exteriér</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter="*">Všetko </a></li>
@@ -63,7 +86,11 @@ foreach ( $query_images->posts as $index=>$image) {
         <div class="isotopeContainer">
 
             <?php foreach ($images as $image) { ?>
-            <div class="col-sm-4 isotopeSelector <?=$image['category']?> ">
+
+           
+
+
+            <div class="col-sm-3 isotopeSelector <?=$image['category']?> ">
                 <article class="">
                     <figure>
                         <a title="First Image" class="fancybox-pop" rel="portfolio-1" href="<?=$image['large']?>">
