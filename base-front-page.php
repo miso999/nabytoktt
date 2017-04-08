@@ -16,7 +16,25 @@ get_template_part('templates/header');
 ?>
 
 <header id="page-top">
-    <img src="<?=Extras\ImagePath()?>/sldier.jpg">
+   <div style="width:100%;padding-top:100px;height:800px;background-image: url('<?=Extras\ImagePath()?>/plan.jpg');background-size:cover;">
+
+
+
+    <ul class="sluzby">
+
+        <div style="text-align: left">
+        <div>
+            <span class="section-title"> Služby </span>
+        </div>
+        <span class="title-separator"></span>
+  
+    </div>
+  <li> Návrh a zameranie</li>
+  <li> Výroba</li>
+  <li> Montáž</li>
+  <li> Poradenstvo</li>
+</ul>
+  </div>
 </header>
 <div class="content-wrapper">
 
@@ -37,7 +55,6 @@ get_template_part('templates/header');
    echo do_shortcode('[contact-form-7 id="43" title="Kontaktný formulár"]');
   ?>
 </section>
-
 
 
 

@@ -33,6 +33,16 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+          var i = 0;
+        $('.sluzby').each(function() {
+            var hide_after = $(this).children().length;
+            $(this).children().each(function(counter) {
+                $(this)
+                    .delay(++i * 500)
+                    .animate({left:0, opacity:1})
+                    .delay((hide_after - counter) * 1000)
+            });
+        });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
