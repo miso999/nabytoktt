@@ -166,7 +166,10 @@ margin: 60px 90px;
      @include media-breakpoint-up(sm) { font-size: 35px; }
   }
 
-  .title-separator { width: 140px;}
+  .title-separator { 
+    width: 140px; 
+    @include media-breakpoint-up(sm) { width: 200px; }
+  }
 
   li {
     list-style-type: none;
