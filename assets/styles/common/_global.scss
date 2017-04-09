@@ -408,11 +408,12 @@ ul.filter > li span {
 
 #portfolio .section-subtitle {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
+  padding: 5px;
 }
 
 .wpcf7-form {
-  button, input, select, textarea {
+ input, select, textarea {
     width: 95%;
 }
 }
