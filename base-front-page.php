@@ -29,10 +29,11 @@ get_template_part('templates/header');
         <span class="title-separator"></span>
   
     </div>
+  <li> Poradenstvo</li>
   <li> Návrh a zameranie</li>
   <li> Výroba</li>
   <li> Montáž</li>
-  <li> Poradenstvo</li>
+ 
 </ul>
   </div>
 </header>
@@ -48,12 +49,13 @@ get_template_part('templates/header');
             <span class="section-title"> Kontakt </span>
         </div>
         <span class="title-separator"></span>
-  
+  <?php
+   // echo do_shortcode('[contact-form-7 id="43" title="Kontaktný formulár"]');
+  echo do_shortcode('[contact-form-7 id="44" title="Contact form 1"]');
+  ?>
     </div>
 
-  <?php
-   echo do_shortcode('[contact-form-7 id="43" title="Kontaktný formulár"]');
-  ?>
+  
 </section>
 
 

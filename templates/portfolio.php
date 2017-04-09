@@ -93,7 +93,7 @@ foreach ( $query_images->posts as $index=>$image) {
             <div class="col-sm-3 isotopeSelector <?=$image['category']?> ">
                 <article class="">
                     <figure>
-                        <a class="fancybox-pop" rel="portfolio-1" href="<?=$image['large']?>">
+                        <a class="fancybox-pop" rel="lightbox" href="<?=$image['large']?>">
                             <img height='250' src="<?=$image['thumb']?>" alt="">
                         </a>
                     </figure>

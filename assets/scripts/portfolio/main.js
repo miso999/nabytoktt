@@ -47,34 +47,6 @@ jQuery(document).ready(function($) {
 	};
 	
 	
-
-/*
-|--------------------------------------------------------------------------
-| Fancybox
-|--------------------------------------------------------------------------
-|
-|
-|
-*/		
-
-	myTheme.Fancybox = function () {
-		
-		$(".fancybox-pop").fancybox({
-
-			fitToView	: true,
-			width		: '100%',
-			height		: '100%',
-			autoSize	: true,
-			closeClick	: false,
-			openEffect	: 'elastic',
-			closeEffect	: 'none'
-		});
-	
-	};
-	
-		
-	
-	
 /*
 |--------------------------------------------------------------------------
 | Functions Initializers
@@ -85,9 +57,6 @@ jQuery(document).ready(function($) {
 */
 	
 	myTheme.Isotope();
-	myTheme.Fancybox();
-
-
 
 });
 
