@@ -183,11 +183,16 @@ ul.filter > li span {
 }
 
 .isotopeSelector:hover img {
-    -moz-transform:scale(1.5) rotate(2deg);
-    -webkit-transform:scale(1.5) rotate(2deg);
-    -o-transform:scale(1.5) rotate(2deg);
-    -ms-transform:scale(1.5) rotate(2deg);
-    transform:scale(1.5) rotate(2deg);
+    -moz-transform:scale(1.04);
+    -webkit-transform:scale(1.04);
+    -o-transform:scale(1.04);
+    -ms-transform:scale(1.04);
+    transform:scale(1.04);
+
+    -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(70%);
+
+
     -webkit-transition:all .8s ease;
     -moz-transition:all .8s ease;
     -ms-transition:all .8s ease;
