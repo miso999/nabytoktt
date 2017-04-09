@@ -7,7 +7,7 @@ $query_images_args = array(
     'post_mime_type' =>'image',
     'post_status' => 'inherit',
     'posts_per_page' => -1,
-    'nabytok' => 'postele,kuchyne,satniky,schody,exterier',
+  //  'nabytok' => 'postele,kuchyne,satniky,schody,exterier',
     'orderby' => 'nabytok'
     );
 
@@ -16,7 +16,7 @@ $images = array();
 foreach ( $query_images->posts as $index=>$image) {
 
     $terms =  wp_get_post_terms($image->ID, 'nabytok', array("fields" => "slugs"));
-    $images[$index]['category'] =  $terms[0];
+ //   $images[$index]['category'] =  $terms[0];
     $images[$index]['large'] = wp_get_attachment_image_src( $image->ID, 'large')[0];
     $images[$index]['thumb'] = wp_get_attachment_image_src( $image->ID, 'thumbnail')[0];
 }
@@ -32,7 +32,7 @@ foreach ( $query_images->posts as $index=>$image) {
            
 
 
-            <div class="col-sm-4 isotopeSelector <?=$image['category']?> ">
+            <div class="col-sm-4 isotopeSelector">
                 <article class="">
                     <figure>
                         <a rel="lightbox" href="<?=$image['large']?>">
