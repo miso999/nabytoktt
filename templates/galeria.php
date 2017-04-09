@@ -7,8 +7,9 @@ $query_images_args = array(
     'post_mime_type' =>'image',
     'post_status' => 'inherit',
     'posts_per_page' => -1,
-  //  'nabytok' => 'postele,kuchyne,satniky,schody,exterier',
-    'orderby' => 'nabytok'
+    //'nabytok' => 'postele,kuchyne,satniky,schody,exterier',
+     'order' => 'ASC',
+     'orderby' => 'rand'
     );
 
 $query_images = new WP_Query( $query_images_args );

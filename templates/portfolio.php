@@ -29,7 +29,7 @@ $query_images_args = array(
     'post_mime_type' =>'image',
     'post_status' => 'inherit',
     'posts_per_page' => -1,
-    'nabytok' => 'postele,kuchyne,satniky,schody,exterier',
+    'nabytok' => 'postele,kuchyne,satniky,schody,exterier,ostatne',
     'orderby' => 'nabytok'
     );
 
@@ -54,13 +54,8 @@ foreach ( $query_images->posts as $index=>$image) {
             <span class="section-title"> Realizácie </span>
         </div>
         <span class="title-separator"></span>
-        <div>
-            <span class="section-subtitle">	Ukážky zhotovených prác	</span>
-        </div>
-    </div>
 
-
-    <div class="container">
+        <div class="container">
         <div class="row">
             <div class="col-sm-12 col-xs-12">
 
@@ -71,13 +66,22 @@ foreach ( $query_images->posts as $index=>$image) {
                         <li class="list-inline-item"><a href="#" data-filter=".schody">Schody</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter=".postele">Postele</a><span>|</span></li>
                         <li class="list-inline-item"><a href="#" data-filter=".exterier">Exteriér</a><span>|</span></li>
-                        <li class="list-inline-item"><a href="#" data-filter="*">Všetko </a></li>
+                        <li class="list-inline-item"><a href="#" data-filter=".ostatne">Iné </a></li>
                     </ul>
                 </div>
 
             </div>
         </div>
     </div>
+
+    
+        <div>
+            <span class="section-subtitle">  Všetky fotografie nájdete v <a href="/galeria/">galérii zhotovených nábytkov na mieru. </a>     </span>
+        </div>
+    </div>
+
+
+    
 </section>
 
 <section class="portfolio-section port-col">

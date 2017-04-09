@@ -10,8 +10,7 @@
     },
     "main.css": {
       "files": [
-        "styles/main.scss",
-        "styles/components/portfolio/styles.css"
+        "styles/main.scss"
       ],
       "main": true
     },

@@ -13,7 +13,7 @@
 
 .filter-container {
     text-align:center;
-    padding:20px
+   /* padding:20px*/
 }
 
 ul.filter > li > a {
@@ -209,3 +209,4 @@ ul.filter > li span {
 }
 
 
+#portfolio .section-subtitle {padding: 30px;}
