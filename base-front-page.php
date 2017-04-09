@@ -69,5 +69,7 @@ get_template_part('templates/footer');
 wp_footer();
 ?>
 </div>
+<?get_template_part('templates/analytics');?>
+
 </body>
 </html>
