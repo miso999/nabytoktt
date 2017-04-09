@@ -39,7 +39,7 @@ function ImagePath() {
 
 
 function load_fonts() {
-  wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Rokkitt%3A100%2C300%2C400%2C500%2C700%7CNoto+Serif%3A100%2C300%2C400%2C500%2C700');
+  wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Rokkitt%3A100%2C300%2C400%2C500%2C700%7CNoto+Serif%3A100%2C300%2C400%2C500%2C700&subset=latin,latin-ext');
   wp_enqueue_style( 'googleFonts');
   }
 

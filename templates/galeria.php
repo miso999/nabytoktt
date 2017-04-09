@@ -3,7 +3,7 @@
  <div style="text-align: center">
         <div>
 <h1 class="section-title"> 
-Galéria zhotovených prác
+<?=get_the_title();?>
  </h1>
         </div>
         <span class="title-separator"></span>
