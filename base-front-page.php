@@ -50,12 +50,12 @@ get_template_part('templates/header');
         </div>
         <span class="title-separator"></span>
   <?php
-   // echo do_shortcode('[contact-form-7 id="43" title="Kontaktný formulár"]');
-  echo do_shortcode('[contact-form-7 id="44" title="Contact form 1"]');
+  echo do_shortcode('[contact-form-7 id="43" title="Kontaktný formulár"]');
+  //echo do_shortcode('[contact-form-7 id="44" title="Contact form 1"]');
   ?>
     </div>
 
-  
+
 </section>
 
 
