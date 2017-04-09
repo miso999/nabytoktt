@@ -1,6 +1,12 @@
 <?php the_content(); ?>
 <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-
+ <div style="text-align: center">
+        <div>
+<h1 class="section-title"> 
+Galéria zhotovených prác
+ </h1>
+        </div>
+        <span class="title-separator"></span>
 <?
 $query_images_args = array(
     'post_type' => 'attachment',

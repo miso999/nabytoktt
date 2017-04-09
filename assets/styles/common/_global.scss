@@ -410,3 +410,9 @@ ul.filter > li span {
   display: block;
   margin-bottom: 7px;
 }
+
+.wpcf7-form {
+  button, input, select, textarea {
+    width: 95%;
+}
+}
